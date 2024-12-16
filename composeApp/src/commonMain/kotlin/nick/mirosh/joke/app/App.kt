@@ -29,6 +29,7 @@ const val URL = "https://v2.jokeapi.dev/joke/Any?type=single"
 fun App() {
     MaterialTheme {
         var client: HttpClient? = null
+        //to make sure that we're not creating a new client on every recomposition
         LaunchedEffect(Unit) {
             client = createPlatformHttpClient().config {
                 install(ContentNegotiation) {
